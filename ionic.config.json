@@ -1,5 +1,7 @@
 {
   "name": "MeuAppIncrivel",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
