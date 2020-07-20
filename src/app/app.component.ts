@@ -32,8 +32,13 @@ export class AppComponent {
   private initializeFirebase() {
     const options: PushOptions = {
       android: {
-        senderID: 'Seu codigo aqui'
-      }
+        senderID: '72485599149'
+      },
+      ios: {
+        alert: "true",
+        badge: "true",
+        sound: "true"
+      },
     }
 
     const pushObject: PushObject = this.push.init(options)

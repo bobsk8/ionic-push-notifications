@@ -18,6 +18,7 @@ log.txt
 npm-debug.log*
 
 google-services.json
+GoogleService-Info.plist
 
 /.idea
 /.ionic
