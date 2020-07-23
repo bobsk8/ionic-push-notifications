@@ -32,7 +32,8 @@ export class AppComponent {
   private initializeFirebase() {
     const options: PushOptions = {
       android: {
-        senderID: '72485599149'
+        senderID: '1061515012993',
+        forceShow: true,
       },
       ios: {
         alert: "true",
@@ -45,6 +46,17 @@ export class AppComponent {
 
     pushObject.on('registration').subscribe(res => console.log(` ${res.registrationId}`))
 
-    pushObject.on('notification').subscribe(res => alert(`Já chegou o disco voador: ${res.message}`))
+    pushObject.on('notification').subscribe(res => {
+      
+      // Primeiro plano
+      //resp.additionalData.foreground: true
+      
+      // Segundo plano
+      //resp.additionalData.foreground: false
+      
+      if (!res.additionalData.foreground && !res.additionalData.coldstart) {
+        alert(`Redirecionando para ${res.additionalData.route}`);
+      }
+    });
   }
 }
